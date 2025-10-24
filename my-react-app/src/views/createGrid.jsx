@@ -35,6 +35,7 @@ const Creategrid = ({ podcasts, onPodcastSelect, genres }) => {
     <div className="grid">
       {podcasts.map((podcast) => (
         <PodcastCard
+          //key to update the dom
           key={podcast.id}
           podcast={podcast}
           onSelect={onPodcastSelect}
