@@ -19,7 +19,7 @@ const PodcastCard = ({ podcast, onSelect, genres }) => {
       />
       <h3>{podcast.title || "No Title"}</h3>
       <p className="seasons">
-        {seasonCount} seasons{seasonCount > 1 ? "s" : ""}
+        {seasonCount} season{seasonCount > 1 ? "s" : ""}
       </p>
       <div className="tags">
         {genreNames.length > 0 ? (
