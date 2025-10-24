@@ -7,19 +7,34 @@ const PodcastCard = ({ podcast, onSelect, genres }) => {
   const updatedDate = DateUtils.format(
     podcast.updated || new Date().toISOString()
   );
-  console.log( "Podcast in Card:", podcast );
-  
-  let seasonCount =podcast.seasons && Array.isArray(poddcast.seasons) ? (typeof podcast.seasons === 'number' ? podcast.seasons : 0);
+  console.log("Podcast in Card:", podcast);
+
+  let seasonCount = typeof podcast.seasons === "number" ? podcast.seasons : 0;
 
   return (
-    <div>
-      
+    <div className="card" onClick={() => onSelect(podcast)}>
+      <img
+        src={podcast.image || ""}
+        alt={`${podcast.title || "Podcast"} cover`}
+      />
+      <h3>{podcast.title || "No Title"}</h3>
+      <p className="seasons">
+        {seasonCount} seasons{seasonCount > 1 ? "s" : ""}
+      </p>
+      <div className="tags">
+        {genreNames.length > 0 ? (
+          genreNames.map((genre) => (
+            <span key={genre} className="tag">
+              {genre}
+            </span>
+          ))
+        ) : (
+          <span className="tag">No genres available</span>
+        )}
+      </div>
+      <p className="updated-text">{updatedDate}</p>
     </div>
-  )
-
-
-
-
+  );
 };
 
 export default PodcastCard;
