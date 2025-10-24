@@ -13,7 +13,7 @@ const Header = () => {
       </div>
       <div className="app-header-second">
         <img
-          className="speaking-icon"
+          className="profile-person"
           src="/profile-person.png"
           alt="Profile photo"
         />
