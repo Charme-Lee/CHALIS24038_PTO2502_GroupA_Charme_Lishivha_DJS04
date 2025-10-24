@@ -91,10 +91,10 @@ Example response:
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/Charme-Lee/CHALIS24038_PTO2502_GroupA_Charme_Lishivha_DJS03.git
+git clone https://github.com/Charme-Lee/CHALIS24038_PTO2502_GroupA_Charme_Lishivha_DJS04.git
 
 # 2. Navigate into the project
-cd CHALIS24038_PTO2502_GroupA_Charme_Lishivha_DJS03
+cd CHALIS24038_PTO2502_GroupA_Charme_Lishivha_DJS04
 
 # 3. Open in browser
 Open index.html in any modern browser
