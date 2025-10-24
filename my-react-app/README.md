@@ -1,16 +1,132 @@
-# React + Vite
+# 🎧 DSJ04 React Podcast App: Search, Sort, Filter, and Pagination
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Project Overview
 
-Currently, two official plugins are available:
+The Podcast App is an advanced podcast browsing interface built using **React**.
+It allows users to **search**, **sort**, **filter**, and **paginate** podcast shows dynamically all while maintaining a seamless and consistent user experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project demonstrates the ability to manage **complex UI state**, **synchronize multiple user interactions**, and write **clean, modular, and maintainable React code**.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ⚙️ Tech Stack
 
-## Expanding the ESLint configuration
+- 🧱 **HTML5**
+- 🎨 **CSS3 / Flexbox / Grid**
+- 📜 **JavaScript (ES6+)**
+- 🔡 **Google Fonts**
+- 🧩 **React (UI framework)**
+- 🧭 **Fetch API**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- <small><i>Use of some open source to unpack challenging topics</i></small>
+
+## ✅ Core Features
+
+### 🔍 Search Functionality
+
+- Search any part of a podcast’s title.
+- Results update dynamically as the user types.
+- Search integrates smoothly with filters, sorting, and pagination, no state resets.
+
+### 🔢 Sorting Options
+
+- Sort podcasts by:
+  - **Newest first** (based on last updated date)
+  - **Title A–Z**
+  - **Title Z–A**
+- Sorting works in combination with all active filters and searches.
+
+### 🏷️ Filtering
+
+- Filter podcasts by **genre** using a dropdown or multi-select control.
+- Genre IDs are mapped to their titles via `data.js`.
+- Filters remain active when navigating between pages or updating the list.
+
+### 📄 Pagination
+
+- Display podcasts in **manageable chunks** using numbered pagination i.e “Load More,”
+- Pagination respects active search, filter, and sorting states.
+- User selections persist while navigating through pages.
+
+### 🧠 State Synchronisation
+
+- Centralised state management using React hooks & Context API.
+- All UI controls (search, sort, filter, pagination) update instantly and stay in sync.
+
+---
+
+## 🧩 API Information
+
+### API Endpoint
+
+This endpoint returns an array of **podcast previews**.
+| URL | |
+| --------------------------------- | --------------------------- |
+| `https://podcast-api.netlify.app` |
+Example response:
+
+```json
+{
+  "id": 1,
+  "title": "Science Weekly",
+  "genres": [3, 8],
+  "updated": "2024-04-15T00:00:00Z",
+  "image": "https://example.com/science.jpg"
+}
+```
+
+## 🧹 Code Quality & Maintainability
+
+- All major functions and components are documented with JSDoc.
+
+- Modular, reusable React components.
+
+- Consistent formatting, naming conventions, and indentation.
+
+- Clean console (no errors or warnings).
+
+- Version-controlled development with meaningful Git commit messages.
+
+## 🚀 Getting Started
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/Charme-Lee/CHALIS24038_PTO2502_GroupA_Charme_Lishivha_DJS03.git
+
+# 2. Navigate into the project
+cd CHALIS24038_PTO2502_GroupA_Charme_Lishivha_DJS03
+
+# 3. Open in browser
+Open index.html in any modern browser
+```
+
+---
+
+## ✨ Usage Example
+
+Once the app is running, you can:
+
+1. **Browse All Podcasts**  
+   View all available podcasts fetched from the public API.
+
+2. **Search Podcasts**  
+   Type keywords in the search bar to find podcasts by title.  
+   Example: typing “comedy” instantly filters to comedy-related shows.
+
+3. **Filter by Genre**  
+   Choose a specific genre from the dropdown (e.g., “History”, “Comedy”).  
+   The list updates immediately without resetting the search.
+
+4. **Sort Results**  
+   Choose from:
+
+   - Newest First
+   - Title A–Z
+   - Title Z–A
+
+5. **Paginate**  
+   Navigate through pages using “Next” and “Previous” buttons or infinite scroll.
+
+---
+
+© 2025 | DSJ04 React Podcast App | Developed by Charme
