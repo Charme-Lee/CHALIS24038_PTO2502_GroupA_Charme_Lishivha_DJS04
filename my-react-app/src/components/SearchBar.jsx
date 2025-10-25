@@ -14,4 +14,9 @@ import React from "react";
  * @returns {JSX.Element} The rendered search bar component.
  */
 
+const SearchBar = ({ podcasts, onPodcastSelect, genres, setCurrentPodcasts, currentPage, setCurrentPage, itemsPerPage }) => {
+  const [searchTerm, setSearchTerm] = React.useState('');
+  const [selectedGenre, setSelectedGenre] = React.useState(null);
+
+
 export default SearchBar;
