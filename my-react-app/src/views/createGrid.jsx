@@ -30,7 +30,7 @@ import PodcastCard from "../components/PodcastCard";
  * @returns {JSX.Element} A grid container displaying multiple PodcastCard components.
  */
 
-const Creategrid = ({ podcasts, onPodcastSelect, genres }) => {
+const CreateGrid = ({ podcasts, onPodcastSelect, genres }) => {
   return (
     <div className="grid">
       {podcasts.map((podcast) => (
