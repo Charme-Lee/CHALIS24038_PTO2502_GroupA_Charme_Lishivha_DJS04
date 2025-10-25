@@ -30,3 +30,25 @@ const SortBar = ({ podcasts, onPodcastSelect, genres, setCurrentPodcasts, curren
     applySorting(sortBy, newDirection);
   };
 
+   const applySorting = (criterion, direction) => {
+    const sortedPodcasts = [...podcasts].sort((a, b) => {
+      let aValue = a[criterion] || '';
+      let bValue = b[criterion] || '';
+      if (criterion === 'title') {
+        aValue = aValue.toLowerCase();
+        bValue = bValue.toLowerCase();
+      } else if (criterion === 'date') {
+        aValue = new Date(aValue) || new Date(0);
+        bValue = new Date(bValue) || new Date(0);
+      }
+      if (aValue < bValue) return direction === 'asc' ? -1 : 1;
+      if (aValue > bValue) return direction === 'asc' ? 1 : -1;
+      return 0;
+    });
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentPodcasts = sortedPodcasts.slice(indexOfFirstItem, indexOfLastItem);
+    const totalPages = Math.ceil(sortedPodcasts.length / itemsPerPage);
+    setCurrentPodcasts({ currentPodcasts, totalPages });
+  };
+
