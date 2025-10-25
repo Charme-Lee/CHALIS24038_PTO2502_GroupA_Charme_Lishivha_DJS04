@@ -90,4 +90,4 @@ const SortBar = ({
   );
 };
 
-export default sortBar;
+export default SortBar;
