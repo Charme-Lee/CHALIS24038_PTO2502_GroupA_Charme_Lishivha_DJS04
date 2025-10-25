@@ -24,6 +24,30 @@ const SearchBar = ({ podcasts, onPodcastSelect, genres, setCurrentPodcasts, curr
     console.log('Search Term:', value); // Debug
   };
 
+  // Use useMemo for efficient filtering
+  const filteredPodcasts = React.useMemo(() => {
+    let result = podcasts.filter(podcast =>
+      podcast.title?.toLowerCase().includes(searchTerm.toLowerCase()) || ''
+    );
+    if (selectedGenre) {
+      result = result.filter(podcast =>
+        podcast.genres?.includes(selectedGenre) || false
+      );
+    }
+    console.log('Filtered Podcasts:', result); // Debug
+    return result;
+  }, [podcasts, searchTerm, selectedGenre]);
+
+  // Update current podcasts and total pages
+  React.useEffect(() => {
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentPodcasts = filteredPodcasts.slice(indexOfFirstItem, indexOfLastItem);
+    const totalPages = Math.ceil(filteredPodcasts.length / itemsPerPage);
+    setCurrentPodcasts({ currentPodcasts, totalPages });
+    console.log('Current Podcasts:', currentPodcasts); // Debug
+  }, [searchTerm, selectedGenre, currentPage, itemsPerPage, filteredPodcasts, setCurrentPodcasts]);
+
 
 
 
