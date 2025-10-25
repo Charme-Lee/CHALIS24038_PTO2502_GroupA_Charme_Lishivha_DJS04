@@ -16,7 +16,17 @@ import React from "react";
 
 const SearchBar = ({ podcasts, onPodcastSelect, genres, setCurrentPodcasts, currentPage, setCurrentPage, itemsPerPage }) => {
   const [searchTerm, setSearchTerm] = React.useState('');
-  const [selectedGenre, setSelectedGenre] = React.useState(null);
+  const [ selectedGenre, setSelectedGenre ] = React.useState( null );
+  
+    const handleSearch = (value) => {
+    setSearchTerm(value);
+    setCurrentPage(1); // Reset to first page on new search
+    console.log('Search Term:', value); // Debug
+  };
+
+
+
+
 
 
 export default SearchBar;
