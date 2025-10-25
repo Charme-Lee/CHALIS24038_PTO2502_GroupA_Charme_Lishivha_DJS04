@@ -13,3 +13,5 @@ import React from "react";
  * @param {number} props.itemsPerPage - The number of items per page.
  * @returns {JSX.Element} The rendered search bar component.
  */
+
+export default SearchBar;
