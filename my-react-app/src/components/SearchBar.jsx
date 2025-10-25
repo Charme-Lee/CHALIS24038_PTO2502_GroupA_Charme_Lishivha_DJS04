@@ -117,7 +117,7 @@ const SearchBar = ({
           style={{
             padding: "0.5rem 1rem",
             marginRight: "0.5rem",
-            backgroundColor: "#007bff",
+            backgroundColor: "#1d2835ff",
             color: "white",
             border: "none",
             borderRadius: "4px",
@@ -138,7 +138,7 @@ const SearchBar = ({
           style={{
             padding: "0.5rem 1rem",
             marginLeft: "0.5rem",
-            backgroundColor: "#007bff",
+            backgroundColor: "##1d2835ff",
             color: "white",
             border: "none",
             borderRadius: "4px",
