@@ -47,6 +47,15 @@ const SearchBar = ({ podcasts, onPodcastSelect, genres, setCurrentPodcasts, curr
     setCurrentPodcasts({ currentPodcasts, totalPages });
     console.log('Current Podcasts:', currentPodcasts); // Debug
   }, [searchTerm, selectedGenre, currentPage, itemsPerPage, filteredPodcasts, setCurrentPodcasts]);
+  // Update current podcasts and total pages
+  React.useEffect(() => {
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentPodcasts = filteredPodcasts.slice(indexOfFirstItem, indexOfLastItem);
+    const totalPages = Math.ceil(filteredPodcasts.length / itemsPerPage);
+    setCurrentPodcasts({ currentPodcasts, totalPages });
+    console.log('Current Podcasts:', currentPodcasts); // Debug
+  }, [searchTerm, selectedGenre, currentPage, itemsPerPage, filteredPodcasts, setCurrentPodcasts]);
 
 
 
