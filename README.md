@@ -1,90 +1,130 @@
-# DSJ04 React Podcast App: Search, Sort, Filter, and Pagination
+# 🎧 DSJ04 React Podcast App: Search, Sort, Filter, and Pagination
 
-## Project Overview
+## 📌 Project Overview
 
-In this project, you will build an advanced podcast browsing experience that allows users to dynamically **search**, **sort**, **filter**, and **paginate** a list of podcast shows. The goal is to create an intuitive interface that responds to user input in real time and maintains a consistent, seamless experience throughout navigation.
+The Podcast App is an advanced podcast browsing interface built using **React**.
+It allows users to **search**, **sort**, **filter**, and **paginate** podcast shows dynamically all while maintaining a seamless and consistent user experience.
 
-This project will test your ability to manage complex UI state, synchronise multiple user interactions, and maintain clean, scalable code.
-
-## Core Objectives
-
-### Search Functionality
-
-- Implement a flexible search that matches any part of the podcast title.
-- Results should update dynamically as the user types or upon submission.
-- Ensure that search results integrate with current filters, sorts, and pagination without resetting them.
-
-### Sorting Options
-
-- Allow sorting podcasts by:
-  - Newest first (based on last updated date).
-  - Title A–Z and Z–A.
-- Sorting must work in tandem with any search or filter criteria.
-
-### Filtering
-
-- Enable genre-based filtering using a dropdown or multi-select input.
-- Ensure filters work alongside current search, sort, and pagination state.
-- Maintain selected filters when navigating between pages or updating the list.
-
-### Pagination
-
-- Display podcasts in manageable chunks using pagination, load-more, or infinite scroll.
-- Ensure that pagination respects the currently active search, filter, and sort state.
-- Keep all UI selections intact while navigating pages.
-
-### State Synchronisation
-
-- Maintain a centralised and cleanly organised state using React state, context, or a state management library.
-- Ensure that all controls (search, sort, filter, pagination) reflect changes immediately and stay in sync.
-
-### Code Quality & Maintainability
-
-- Use JSDoc to document all major functions and modules.
-- Apply consistent formatting and naming conventions.
-- Keep logic modular and components reusable.
-
-### API Endpoints
-
-Data can be called via a `fetch` request to the following endpoint.
-
-| URL                               |                             |
-| --------------------------------- | --------------------------- |
-| `https://podcast-api.netlify.app` | Returns an array of PREVIEW |
-
-### Genre Titles
-
-Since the podcast preview information fetched from the API only exposes genres by their IDs, the actual genre details (such as titles) are not included in the API response. These details are instead provided in the data.js file found in this repository. Therefore, it is recommended that you include the mapping between genre ID values and their corresponding titles in your code using this file.
-
-## Project Deliverables
-
-- A fully functional React app that:
-
-  - Fetches and displays podcast data.
-  - Allows live searching, sorting, filtering, and pagination.
-  - Maintains consistent state across all UI interactions.
-
-- **Clean Codebase** with:
-
-  - Reusable, modular components.
-  - Clear and consistent formatting across all files.
-  - JSDoc comments for functions/modules.
-
-- **README.md** with:
-
-  - Project overview and purpose.
-  - Setup and usage instructions.
-  - Descriptions of key features (search, filter, sort, pagination).
-
-- **Version Control (GitHub)**:
-  - Clear, meaningful commit messages.
-  - Incremental commits reflecting development progress.
-
-## Success Criteria
-
-- No console errors or broken UI on load.
-- All features work correctly and together without losing state.
-- Clean, maintainable codebase with documentation.
-- A polished user experience with responsive layout and real-time updates.
+This project demonstrates the ability to manage **complex UI state**, **synchronize multiple user interactions**, and write **clean, modular, and maintainable React code**.
 
 ---
+
+## ⚙️ Tech Stack
+
+- 🧱 **HTML5**
+- 🎨 **CSS3 / Flexbox / Grid**
+- 📜 **JavaScript (ES6+)**
+- 🔡 **Google Fonts**
+- 🧩 **React (UI framework)**
+- 🧭 **Fetch API**
+
+- <small><i>Use of some open source to unpack challenging topics</i></small>
+
+## ✅ Core Features
+
+### 🔍 Search Functionality
+
+- Search any part of a podcast’s title.
+- Results update dynamically as the user types.
+- Search integrates smoothly with filters, sorting, and pagination, no state resets.
+
+### 🔢 Sorting Options
+
+- Sort podcasts by:
+  - **Newest first** (based on last updated date)
+  - **Title A–Z**
+  - **Title Z–A**
+- Sorting works in combination with all active filters and searches.
+
+### 🏷️ Filtering
+
+- Filter podcasts by **genre** using a dropdown or multi-select control.
+- Genre IDs are mapped to their titles via `data.js`.
+- Filters remain active when navigating between pages or updating the list.
+
+### 📄 Pagination
+
+- Display podcasts in **manageable chunks** using numbered pagination i.e “Load More,”
+- Pagination respects active search, filter, and sorting states.
+- User selections persist while navigating through pages.
+
+### 🧠 State Synchronisation
+
+- Centralised state management using React hooks & Context API.
+- All UI controls (search, sort, filter, pagination) update instantly and stay in sync.
+
+---
+
+## 🧩 API Information
+
+### API Endpoint
+
+This endpoint returns an array of **podcast previews**.
+| URL | |
+| --------------------------------- | --------------------------- |
+| `https://podcast-api.netlify.app` |
+Example response:
+
+```json
+{
+  "id": 1,
+  "title": "Science Weekly",
+  "genres": [3, 8],
+  "updated": "2024-04-15T00:00:00Z",
+  "image": "https://example.com/science.jpg"
+}
+```
+
+## 🧹 Code Quality & Maintainability
+
+- All major functions and components are documented with JSDoc.
+
+- Modular, reusable React components.
+
+- Consistent formatting, naming conventions, and indentation.
+
+- Version-controlled development with meaningful Git commit messages.
+
+## 🚀 Getting Started
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/Charme-Lee/CHALIS24038_PTO2502_GroupA_Charme_Lishivha_DJS04.git
+
+# 2. Navigate into the project
+cd CHALIS24038_PTO2502_GroupA_Charme_Lishivha_DJS04
+
+# 3. Open in browser
+Open index.html in any modern browser
+```
+
+---
+
+## ✨ Usage Example
+
+Once the app is running, you can:
+
+1. **Browse All Podcasts**  
+   View all available podcasts fetched from the public API.
+
+2. **Search Podcasts**  
+   Type keywords in the search bar to find podcasts by title.  
+   Example: typing “comedy” instantly filters to comedy-related shows.
+
+3. **Filter by Genre**  
+   Choose a specific genre from the dropdown (e.g., “History”, “Comedy”).  
+   The list updates immediately without resetting the search.
+
+4. **Sort Results**  
+   Choose from:
+
+   - Newest First
+   - Title A–Z
+   - Title Z–A
+
+5. **Paginate**  
+   Navigate through pages using “Next” and “Previous” buttons or infinite scroll.
+
+---
+
+© 2025 | DSJ04 React Podcast App | Developed by Charme
