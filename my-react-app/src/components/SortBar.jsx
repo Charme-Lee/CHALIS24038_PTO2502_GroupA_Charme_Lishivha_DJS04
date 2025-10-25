@@ -12,3 +12,21 @@ import React from 'react';
  * @param {function} props.setCurrentPage - Callback to update the current page.
  * @param {number} props.itemsPerPage - The number of items per page.
  * @returns {JSX.Element} The rendered sort bar component.
+ */
+ 
+const SortBar = ({ podcasts, onPodcastSelect, genres, setCurrentPodcasts, currentPage, setCurrentPage, itemsPerPage }) => {
+  const [sortBy, setSortBy] = React.useState('title');
+  const [sortDirection, setSortDirection] = React.useState('asc');
+
+  const handleSortChange = (criterion) => {
+    setSortBy(criterion);
+    setCurrentPage(1); // Reset to first page on sort change
+    applySorting(criterion, sortDirection);
+  };
+
+  const toggleSortDirection = () => {
+    const newDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+    setSortDirection(newDirection);
+    applySorting(sortBy, newDirection);
+  };
+
