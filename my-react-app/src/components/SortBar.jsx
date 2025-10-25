@@ -71,7 +71,7 @@ const SortBar = ({
         style={{ padding: "0.5rem", marginRight: "1rem" }}
       >
         <option value="title">Sort by Title</option>
-        <option value="date">Sort by Date</option>
+        <option value="updated">Sort by Date</option>
       </select>
       <button
         onClick={toggleSortDirection}
