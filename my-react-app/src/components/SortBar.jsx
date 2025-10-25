@@ -77,7 +77,7 @@ const SortBar = ({
         onClick={toggleSortDirection}
         style={{
           padding: "0.5rem 1rem",
-          backgroundColor: "#007bff",
+          backgroundColor: "#11181fff",
           color: "white",
           border: "none",
           borderRadius: "4px",
