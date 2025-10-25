@@ -1,6 +1,6 @@
 import React from "react";
 import { GenreService } from "../utils/GenreService.js";
-import { DateUtils } from "../utils/DateUtils.js";
+import { DateUtils } from "../utils/Dateutils.js";
 
 const CreateModal = ({ podcast, onClose, genres }) => {
   if (!podcast) return null;
