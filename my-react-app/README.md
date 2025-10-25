@@ -83,8 +83,6 @@ Example response:
 
 - Consistent formatting, naming conventions, and indentation.
 
-- Clean console (no errors or warnings).
-
 - Version-controlled development with meaningful Git commit messages.
 
 ## 🚀 Getting Started
